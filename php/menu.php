@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg">
         <!-- Adição ícone do menu -->
             <a href="#" class="navbar-brand">
-                <img class="navbar-brand-img" src="imagem/Logo.svg" alt="Logo Siqueira Websites"/>
+                <img class="navbar-brand-img" src="imagem/Logo_Clara.svg" alt="Logo Siqueira Websites"/>
             </a>
         <!-- Adição Toggler -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

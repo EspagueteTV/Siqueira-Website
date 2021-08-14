@@ -1,12 +1,5 @@
-
-
-.container-fluid{
-	padding: 0px;
-	color: white;
-}
-
 .navbar{
-	background-color: #29292b;
+	background-color: #242425;
 	padding-left: 30px;
 	display: flex;
 }
@@ -16,7 +9,6 @@
 	padding: 5px;
 	display: flex;
 	justify-content: center;
-	max-height: 150px;
 	
 }
 .navbar-nav .nav-item{
@@ -48,6 +40,17 @@
 	height: 35px;
 }
 
+.dropdown-menu{
+	background-color: #454547f5;
+}
+.dropdown-menu .dropdown-item{
+	color: #f8f8f8;
+}
+.dropdown-menu .dropdown-item:hover{
+	background-color: #29292b88;
+	color: #9090cf;
+	margin-top: 2px;
+}
 @media(max-width:750px){
 	.navbar .navbar-nav{
 		margin-left: 0%;
