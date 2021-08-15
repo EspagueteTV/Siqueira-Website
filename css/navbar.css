@@ -31,7 +31,7 @@
 
 .navbar-nav .nav-link:hover{
 	color: #9090cf;
-	border-bottom: solid 2px wheat;
+	/*border-bottom: solid 2px wheat;*/
 	border-radius: 2%;
 }
 
@@ -51,7 +51,7 @@
 	color: #9090cf;
 	margin-top: 2px;
 }
-@media(max-width:750px){
+@media(max-width:1050px){
 	.navbar .navbar-nav{
 		margin-left: 0%;
 	}

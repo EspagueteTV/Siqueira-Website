@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
 <head>
-  <title>Site Avalaição</title>
+  <title>Siqueira Websites</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Inserção do Bootstrap versão 4 -->

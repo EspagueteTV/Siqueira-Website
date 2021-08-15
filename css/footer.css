@@ -1,8 +1,10 @@
 .footer{
     background-color: #19191a;
-    padding: 10px;
+    padding: 5px;
     color: #f8f8f8;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+  
 }
 
 .footer h1{
