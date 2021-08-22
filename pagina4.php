@@ -34,28 +34,47 @@
           <?php include_once("php/menu-exercicio-php.php"); ?>
         </div>
         <div class="col-md-9">
-          <form method="POST" action="pagina1.php">
-            <input type="number" name="num1" placeholder="Informe o primeiro número">
-            <input type="number" name="num2" placeholder="Informe o segundo número">
-            <button type="submit" name="submit" class="btn btn-outline-dark">Enviar</button>
-          </form>
-          <div class="result" style="width: 80%; height: 200px; color: #fff; background-color: #393939;">
-              <?php
-                if(isset($_POST['num1']) && isset($_POST['num2'])){
-                  $num1 = $_POST['num1'];
-                  $num2 = $_POST['num2'];
-                  $soma = $num1 + $num2;
-
-                  if($soma > 20){
-                    $soma += 8;
-                  }else{
-                    $soma -= 5;
-                  }
-                  echo "<h3>O resultado é $soma </h3>";
+          <h1>Exercício 04</h1>
+          <?php
+          //Declaração das variáveis
+            $vetor = [];
+            $porcPar = 0;
+            $soma = 0;
+            
+            // Alocação dos dados no vetor
+            for($i = 0; $i < 20; $i++){
+              $vetor[] = rand(1,100);
+            }
+            
+            // Coleta dos valores do Array
+            foreach($vetor as $chave => $valor){
+              if($chave == 0){
+                $maior = $valor;
+                $menor = $valor;
+              }else{
+                if($valor > $maior){
+                  $maior = $valor;
                 }
+                if($valor < $menor){
+                  $menor = $valor;
+                }
+              }
+              if($valor % 2 == 0){
+                $porcPar++;
+              }
+              $soma += $valor;
+            }
 
-              ?>
-          </div>
+            // Realização dos cálculos
+            $porcPar /= 20;
+            $mediaValores = $soma / 20;
+            
+            // Apresentação dos valores obtidos
+            echo "<p>Maior valor digitado é $maior </p>";
+            echo "<p>Menor valor digitado é $menor </p>";
+            echo "<p>O porcentual de valores pares informado é $porcPar</p>";
+            echo "<p>A média dos valores informados é $mediaValores</p>";
+          ?>
         </div>
 
       </div>

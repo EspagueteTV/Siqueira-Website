@@ -34,28 +34,64 @@
           <?php include_once("php/menu-exercicio-php.php"); ?>
         </div>
         <div class="col-md-9">
-          <form method="POST" action="pagina1.php">
-            <input type="number" name="num1" placeholder="Informe o primeiro número">
-            <input type="number" name="num2" placeholder="Informe o segundo número">
-            <button type="submit" name="submit" class="btn btn-outline-dark">Enviar</button>
-          </form>
-          <div class="result" style="width: 80%; height: 200px; color: #fff; background-color: #393939;">
-              <?php
-                if(isset($_POST['num1']) && isset($_POST['num2'])){
-                  $num1 = $_POST['num1'];
-                  $num2 = $_POST['num2'];
-                  $soma = $num1 + $num2;
+          <h1>Exercício 05</h1>
+          <?php
+            $vetor1 = [];
+            $vetor2 = [];
+            $vetorRepetidos = [];
+            $list = [];
 
-                  if($soma > 20){
-                    $soma += 8;
-                  }else{
-                    $soma -= 5;
+            function verificarExistencia($valor){
+              global $vetorRepetidos;
+              global $list;
+
+              for($i = 0; $i < sizeof($vetorRepetidos); $i++){
+                if($vetorRepetidos[$i] === $valor){ break; }
+                  if($i == (sizeof($vetorRepetidos) - 1)){
+                    if(in_array($vetorRepetidos[$i], $list, true) == null){
+                      $list[] = $valor;
+                    }
                   }
-                  echo "<h3>O resultado é $soma </h3>";
                 }
+              }
 
-              ?>
-          </div>
+            // Alocação dos Dados
+            for($i = 0; $i < 10; $i++){
+              $vetor1[$i] = rand(1,10);
+              $vetor2[$i] = rand(1,10);
+            }
+            
+
+            // Recuperar os valores repetidos
+            for($i = 0; $i < 10; $i++){
+              for($j = 0; $j < 10; $j++){
+                if($vetor1[$i] == $vetor2[$j]){
+                    $vetorRepetidos[] = $vetor2[$j];
+                } 
+              }
+            }
+
+            // Juntar os dois valores
+              for($i = 0; $i < 10; $i++){
+                verificarExistencia($vetor1[$i]);
+                verificarExistencia($vetor2[$i]);
+              }
+
+
+              /* ----------------------------------------- */
+            print_r($vetor1);
+            echo "<br><br>";
+            print_r($vetor2);
+
+            echo "<br><br>";
+
+            echo "<br><br>Vetor com números repetidos <br>";
+            print_r($vetorRepetidos);
+
+            echo "<br><br>Valores diferentes <br>";
+            print_r($list);
+            
+          ?>
         </div>
 
       </div>

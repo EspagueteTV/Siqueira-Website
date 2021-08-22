@@ -34,27 +34,21 @@
           <?php include_once("php/menu-exercicio-php.php"); ?>
         </div>
         <div class="col-md-9">
-          <form method="POST" action="pagina1.php">
-            <input type="number" name="num1" placeholder="Informe o primeiro número">
-            <input type="number" name="num2" placeholder="Informe o segundo número">
-            <button type="submit" name="submit" class="btn btn-outline-dark">Enviar</button>
+          <form action="pagina3.php" method="POST">
+            <input type="number" name="numero" placeholder="Informe um número">
+            <button type="submit" class="btn btn-outline-dark" name="submit">Calcular Tabuada</button>
           </form>
-          <div class="result" style="width: 80%; height: 200px; color: #fff; background-color: #393939;">
-              <?php
-                if(isset($_POST['num1']) && isset($_POST['num2'])){
-                  $num1 = $_POST['num1'];
-                  $num2 = $_POST['num2'];
-                  $soma = $num1 + $num2;
-
-                  if($soma > 20){
-                    $soma += 8;
-                  }else{
-                    $soma -= 5;
+        <div class="result" style="color: #fff;">
+            <?php
+                if(isset($_POST['numero'])){
+                  $numero = $_POST['numero'];
+                  echo "<h3>Tabuada do $numero</h3>";
+                  for($i = 1; $i<= 10; $i++){
+                    $result = $numero * $i;
+                    echo "<p>$numero x $i = $result</p>";
                   }
-                  echo "<h3>O resultado é $soma </h3>";
                 }
-
-              ?>
+            ?>
           </div>
         </div>
 

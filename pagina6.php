@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="css/navbar-exercicio.css">
   <!-- adição do Font Awesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/exercicio6.css">
+
 </head>
 <body>
     <!-- Adição do menu superior -->
@@ -34,30 +36,23 @@
           <?php include_once("php/menu-exercicio-php.php"); ?>
         </div>
         <div class="col-md-9">
-          <form method="POST" action="pagina1.php">
-            <input type="number" name="num1" placeholder="Informe o primeiro número">
-            <input type="number" name="num2" placeholder="Informe o segundo número">
-            <button type="submit" name="submit" class="btn btn-outline-dark">Enviar</button>
+          <h1>Exercício 06 </h1>
+          <form action="pagina6.php" method="POST">
+            <input type="number" class="form-control" name="numero" placeholder="Quantos círculos escrever">
+            <button type="submit" name="submit" class="btn btn-outline-dark">Desenhar</button>
           </form>
-          <div class="result" style="width: 80%; height: 200px; color: #fff; background-color: #393939;">
-              <?php
-                if(isset($_POST['num1']) && isset($_POST['num2'])){
-                  $num1 = $_POST['num1'];
-                  $num2 = $_POST['num2'];
-                  $soma = $num1 + $num2;
-
-                  if($soma > 20){
-                    $soma += 8;
-                  }else{
-                    $soma -= 5;
-                  }
-                  echo "<h3>O resultado é $soma </h3>";
+          <div class="result">
+            <?php
+              if(isset($_POST['numero'])){
+                $vezes = $_POST['numero'];
+                for($i = 0; $i < $vezes; $i++){
+                  echo '<div class="circulo"></div>';
                 }
-
-              ?>
+              }
+            ?>
           </div>
         </div>
-
+        
       </div>
     </div>
 

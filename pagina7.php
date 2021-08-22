@@ -34,26 +34,44 @@
           <?php include_once("php/menu-exercicio-php.php"); ?>
         </div>
         <div class="col-md-9">
-          <form method="POST" action="pagina1.php">
-            <input type="number" name="num1" placeholder="Informe o primeiro número">
-            <input type="number" name="num2" placeholder="Informe o segundo número">
+          <form method="POST" action="pagina7.php">
+            <label for="carroVermelho" class=>Seu carro é vermelho: </label>
+                <input type="radio" name="carroVermelho" value="true">Sim
+                <input type="radio" name="carroVermelho" value="false">Não<br>
+            <label for="camisaBranca">Sua camisa é branca: </label>
+              <input type="radio" name="camisaBranca" value="true">Sim
+              <input type="radio" name="camisaBranca" value="false">Não
+            <br>
             <button type="submit" name="submit" class="btn btn-outline-dark">Enviar</button>
           </form>
-          <div class="result" style="width: 80%; height: 200px; color: #fff; background-color: #393939;">
+          <div class="result">
               <?php
-                if(isset($_POST['num1']) && isset($_POST['num2'])){
-                  $num1 = $_POST['num1'];
-                  $num2 = $_POST['num2'];
-                  $soma = $num1 + $num2;
+              if(isset( $_POST['carroVermelho']) and isset($_POST['camisaBranca'])){
+                $carroVermelho = $_POST['carroVermelho'];
+                $camisaBranca = $_POST['camisaBranca'];
+                $mensagem = "";
+                $cachorro = false;
+                $lavaRoupa = false;
 
-                  if($soma > 20){
-                    $soma += 8;
-                  }else{
-                    $soma -= 5;
-                  }
-                  echo "<h3>O resultado é $soma </h3>";
+                if($carroVermelho){
+                  $mensagem .= "Você é rico, ";
+                  $rico = true;
                 }
+                if($rico){
+                  $mensagem .= "possui cachorro. ";
+                  $cachorro = true;
+                }
+                if(!$cachorro){
+                  $mensagem .= "tem carro branco.";
+                }
+                if($camisaBranca){
+                  $mensagem .= " não lava roupa. ";
+                }else{
+                  $mensagem .= "Você possui um cachorro";
+                }
+              }
 
+              echo $mensagem;
               ?>
           </div>
         </div>

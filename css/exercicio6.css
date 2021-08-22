@@ -1,0 +1,9 @@
+.circulo{
+    display: inline-block;
+    background-color: chartreuse;
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    margin: 2px;
+}
+

@@ -39,22 +39,8 @@
             <input type="number" name="num2" placeholder="Informe o segundo número">
             <button type="submit" name="submit" class="btn btn-outline-dark">Enviar</button>
           </form>
-          <div class="result" style="width: 80%; height: 200px; color: #fff; background-color: #393939;">
-              <?php
-                if(isset($_POST['num1']) && isset($_POST['num2'])){
-                  $num1 = $_POST['num1'];
-                  $num2 = $_POST['num2'];
-                  $soma = $num1 + $num2;
-
-                  if($soma > 20){
-                    $soma += 8;
-                  }else{
-                    $soma -= 5;
-                  }
-                  echo "<h3>O resultado é $soma </h3>";
-                }
-
-              ?>
+          <div class="result">
+              
           </div>
         </div>
 

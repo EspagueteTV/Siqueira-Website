@@ -31,30 +31,49 @@
     <div class="container-fluid main">
       <div class="row">
         <div class="col-md-3">
-          <?php include_once("php/menu-exercicio-php.php"); ?>
+          <?php include_once("php/menu-exercicio-php.php"); 
+            
+          ?>
         </div>
         <div class="col-md-9">
-          <form method="POST" action="pagina1.php">
-            <input type="number" name="num1" placeholder="Informe o primeiro número">
-            <input type="number" name="num2" placeholder="Informe o segundo número">
+          <h1 >Exercício 02</h1>
+
+          <form action="pagina2.php" method="POST">
+            <input type="text" name="numero" class="form-control" placeholder="Informe 20 número, separados por vírgula">
             <button type="submit" name="submit" class="btn btn-outline-dark">Enviar</button>
           </form>
-          <div class="result" style="width: 80%; height: 200px; color: #fff; background-color: #393939;">
-              <?php
-                if(isset($_POST['num1']) && isset($_POST['num2'])){
-                  $num1 = $_POST['num1'];
-                  $num2 = $_POST['num2'];
-                  $soma = $num1 + $num2;
-
-                  if($soma > 20){
-                    $soma += 8;
+          <div class="result">
+          <?php
+            if(isset($_POST['numero'])){
+              $valor = $_POST['numero'];
+              $valores = explode(',',$valor); 
+              $somaPositivo = 0;
+              $qtdNegativo = 0;  
+              
+              if(sizeof($valores) == 20){
+                for($i = 0; $i < sizeof($valores); $i++){
+                  if($valores[$i] > 0){
+                    $somaPositivo += $valores[$i];
                   }else{
-                    $soma -= 5;
+                    $qtdNegativo++;
                   }
-                  echo "<h3>O resultado é $soma </h3>";
                 }
+                echo "<p>Foram informados 20 números</p>";
+                echo "<p>A soma dos números positivos informados é $somaPositivo.</p>";
+                echo "<p>A quantidade de números negativos informados é $qtdNegativo. </p>";
 
-              ?>
+              }else{
+                if(sizeof($valores) > 20){
+                  echo "<p>[ERRO] Foi informado mais valores que o solicitado<p>";
+                }else{
+                  echo "<p>[ERRO] Foi informado menos valores que o solicitado</p>";
+                }
+                echo "<p>Por favor, informa novamente os valores, lembrando que só é possível 20 valores</p>";
+              }
+            }
+              
+                
+            ?>
           </div>
         </div>
 
