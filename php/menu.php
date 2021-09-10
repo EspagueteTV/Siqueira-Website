@@ -1,6 +1,6 @@
 <?php
     echo '
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg ">
         <!-- Adição ícone do menu -->
             <a href="#" class="navbar-brand">
                 <img class="navbar-brand-img" src="imagem/Logo_Clara.svg" alt="Logo Siqueira Websites"/>
@@ -16,8 +16,8 @@
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Exercícios</a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="pagina1.php">PHP</a>
-                        <a class="dropdown-item" href="#">JavaScript</a>
+                        <a class="dropdown-item" href="exercicio1.php">PHP</a>
+                        <a class="dropdown-item" href="#" disable>JavaScript (Em construção)</a>
 
                         </div>
                     
