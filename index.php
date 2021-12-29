@@ -29,7 +29,7 @@
 	<div class="container-fluid">
 		<div class="menu">
 			<?php
-        include_once("php/menu.php");
+        include_once("php/menuIndex.php");
       ?>
 		</div>
     <div class="jumbotron">
